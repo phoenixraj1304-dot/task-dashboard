@@ -1,16 +1,16 @@
-# Task Dashboard
+# Stockwise Inventory Dashboard
 
-A task management application that allows users to create, organize, and filter tasks using a modern, responsive UI built with React.
+A polished inventory tracker that helps teams monitor stock, identify reorder needs, and manage product records using a modern, responsive React UI.
 
 > **Note:** This application is intended for demonstration purposes only and is not meant for production use.
 
 ## Features
 
-- **Task Management**: Create, complete, and delete tasks
-- **Task Tags**: Organize tasks with customizable tags
-- **Task Lists**: Create multiple lists with custom filters
-- **List Filters**: Filter tasks by tags or completion status
-- **Animations**: Smooth transitions and animations using Framer Motion
+- **Inventory Management**: Create, edit, validate, and delete inventory items
+- **Inventory Insights**: Track product count, current inventory value, low-stock items, and out-of-stock items
+- **Search and Filters**: Find items by name, SKU, or category and filter by category or stock status
+- **Persistent Data**: Inventory changes are saved to browser localStorage
+- **Responsive Views**: Switch between a detailed table and mobile-friendly inventory cards
 - **Responsive Design**: Works on desktop and mobile devices
 
 ## Technology Stack
@@ -73,24 +73,9 @@ The application supports pre-populating the app with sample data through an opti
 
 ## Architecture
 
-### State Management
+### State and UI
 
-The application uses React Context for state management:
-
-- **TaskContext**: Manages tasks state and operations (add, toggle, delete)
-- **TagContext**: Manages tags and their relationships with tasks
-- **ListContext**: Manages task lists and filtering logic
-
-### UI Components
-
-The application features several key components:
-- **TaskList**: Renders a list of tasks
-- **TaskItem**: Renders an individual task
-- **TaskBoard**: Manages multiple task lists
-- **TagManager**: Interface for creating and managing tags
-- **GlobalTaskForm**: Form for creating new tasks
-- **ListAddTask**: Form for adding tasks to specific lists
-- **TaskListConfig**: Interface for configuring task lists
+The inventory MVP keeps its state in the top-level React view and synchronizes the inventory collection to `localStorage`. The UI is composed of summary metric cards, a searchable/filterable inventory table or card grid, and a validated add/edit modal. Existing task feature components remain available for compatibility with the original project test suite.
 
 ## Contributing
 
